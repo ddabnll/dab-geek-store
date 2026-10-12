@@ -98,18 +98,18 @@ Você não precisa de nenhum servidor complexo nem de instalações como Node.js
 
 Para disponibilizar o projeto online para visualização do professor e colegas:
 
-1. Acesse o repositório no seu GitHub: `https://github.com/Daniel-Bonilla/dab-geek-store` (ou o nome que escolher);
+1. Acesse o repositório no seu GitHub: `https://github.com/ddabnll/dab-geek-store`;
 2. Clique na aba **Settings** (Configurações);
 3. No menu lateral esquerdo, clique em **Pages**;
 4. Em **Build and deployment > Branch**, selecione a branch `main` e a pasta `/ (root)`;
-5. Clique em **Save**. Em instantes, o GitHub gerará um link público seguro (`https://seu-usuario.github.io/dab-geek-store/`) para acessar a loja online!
+5. Clique em **Save**. Em instantes, o GitHub gerará um link público seguro (`https://ddabnll.github.io/dab-geek-store/`) para acessar a loja online!
 
 ---
 
 ## 👨‍💻 Autor
 
 **Daniel de Andrade Bonilla**
-* GitHub: [@seu-usuario](https://github.com/danielbonilla321)
+* GitHub: [@ddabnll](https://github.com/ddabnll)
 * E-mail: [danielbonilla321@gmail.com](mailto:danielbonilla321@gmail.com)
 * WhatsApp: (81) 99735-4423
 
