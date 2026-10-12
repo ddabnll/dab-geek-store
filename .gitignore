@@ -16,6 +16,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Scripts locais
+enviar-para-github.bat
+*.bat
+
 # Builds e Dependências (caso venha a utilizar)
 node_modules/
 dist/
