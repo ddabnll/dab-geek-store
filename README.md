@@ -11,6 +11,7 @@ Projeto de interface e arquitetura front-end de uma plataforma de **e-commerce t
 
 ## 🎓 Contexto Acadêmico
 
+* **Instituição:** ETE Porto Digital (Escola Técnica Estadual Porto Digital)
 * **Curso:** Técnico em Desenvolvimento de Software
 * **Disciplina:** Programação em Novas Tecnologias II
 * **Aluno / Desenvolvedor:** Daniel de Andrade Bonilla
@@ -91,18 +92,6 @@ Você não precisa de nenhum servidor complexo nem de instalações como Node.js
 
 ### Opção 2: Pelo Navegador
 1. Dê um duplo clique diretamente no arquivo `index.html` para abri-lo em qualquer navegador (Chrome, Edge, Firefox, Brave, etc.).
-
----
-
-## 🌐 Publicação no GitHub Pages
-
-Para disponibilizar o projeto online para visualização do professor e colegas:
-
-1. Acesse o repositório no seu GitHub: `https://github.com/ddabnll/dab-geek-store`;
-2. Clique na aba **Settings** (Configurações);
-3. No menu lateral esquerdo, clique em **Pages**;
-4. Em **Build and deployment > Branch**, selecione a branch `main` e a pasta `/ (root)`;
-5. Clique em **Save**. Em instantes, o GitHub gerará um link público seguro (`https://ddabnll.github.io/dab-geek-store/`) para acessar a loja online!
 
 ---
 
