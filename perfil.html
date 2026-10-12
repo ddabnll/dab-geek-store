@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil — DAB GEEK STORE</title>
+  <meta name="description" content="Gerenciamento de perfil, nível de XP, endereços e histórico de pedidos na DAB GEEK STORE.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meu Perfil — DAB GEEK STORE">
+  <meta property="og:description" content="Acesse seus dados cadastrais e acompanhe o status de envio de seus pedidos.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="marca">DAB GEEK</a>
+      <div class="nav-direita">
+        <button type="button" class="nav-carrinho" id="botao-carrinho" aria-haspopup="dialog" aria-expanded="false" aria-controls="painel-carrinho" aria-label="Abrir inventário, 0 itens">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8z"></path>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+          </svg>
+          <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
+        </button>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="perfil.html" aria-current="page">Perfil</a></li>
+          <li><a href="conta.html" class="nav-cta">Entrar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- GAVETA LATERAL DO CARRINHO / INVENTÁRIO -->
+  <div class="carrinho-fundo" id="fundo-carrinho" hidden></div>
+  <aside class="carrinho-painel" id="painel-carrinho" role="dialog" aria-modal="true" aria-label="Seu inventário de compras" hidden>
+    <div class="carrinho-cabecalho">
+      <h2>Seu Inventário</h2>
+      <button type="button" class="carrinho-fechar" id="fechar-carrinho" aria-label="Fechar inventário">&times;</button>
+    </div>
+    <div class="carrinho-lista" id="lista-carrinho"></div>
+    <div class="carrinho-rodape">
+      <div class="carrinho-total-linha">
+        <span>Total</span>
+        <span id="total-carrinho">R$ 0,00</span>
+      </div>
+      <button type="button" class="btn btn-primario btn-bloco" id="finalizar-carrinho">Fechar Pedido</button>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo">
+    <header class="cabecalho-pagina">
+      <div class="container">
+        <p class="rotulo">Área do Colecionador</p>
+        <h1>Meu Perfil</h1>
+      </div>
+    </header>
+
+    <section class="secao">
+      <div class="container">
+        <div class="perfil-grade">
+          <!-- CARD LATERAL COM INFORMAÇÕES RESUMIDAS -->
+          <aside class="perfil-cartao">
+            <div class="perfil-avatar">DB</div>
+            <h3>Daniel Bonilla</h3>
+            <span class="categoria">Rank Ouro • Nível 24</span>
+            <p style="font-size: 13px; color: var(--ink-faint); margin-top: 4px;">1.850 XP Acumulados</p>
+            <ul class="perfil-lista">
+              <li><a href="#dados">Meus Dados</a></li>
+              <li><a href="#enderecos">Endereços de Envio</a></li>
+              <li><a href="#pedidos">Histórico de Pedidos</a></li>
+              <li><a href="conta.html">Desconectar da Base</a></li>
+            </ul>
+          </aside>
+
+          <!-- CONTEÚDO PRINCIPAL DO PERFIL -->
+          <div class="painel-conteudo">
+            <!-- BLOCO 1: DADOS PESSOAIS -->
+            <div class="painel-bloco" id="dados">
+              <div class="painel-bloco-cabecalho">
+                <h3>Dados Cadastrais</h3>
+              </div>
+              <div class="painel-corpo">
+                <form novalidate>
+                  <div class="campo">
+                    <label for="perfil-nome">Nome Completo</label>
+                    <input type="text" id="perfil-nome" value="Daniel de Andrade Bonilla" required>
+                  </div>
+                  <div class="campo">
+                    <label for="perfil-email">E-mail Cadastrado</label>
+                    <input type="email" id="perfil-email" value="danielbonilla321@gmail.com" required>
+                  </div>
+                  <div class="campo">
+                    <label for="perfil-tel">WhatsApp / Telefone</label>
+                    <input type="tel" id="perfil-tel" value="(81) 99735-4423">
+                  </div>
+                  <button type="submit" class="btn btn-primario">Salvar Alterações</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- BLOCO 2: ENDEREÇOS -->
+            <div class="painel-bloco" id="enderecos">
+              <div class="painel-bloco-cabecalho">
+                <h3>Endereço de Entrega Principal</h3>
+              </div>
+              <div class="painel-corpo">
+                <p style="color: #FFFFFF; font-weight: 600; margin-bottom: 4px;">Recife — Pernambuco</p>
+                <p style="color: var(--ink-soft); font-size: 14px; margin-bottom: 16px;">CEP 50000-000 • Brasil</p>
+                <button type="button" class="btn btn-contorno btn-pequeno">Editar Endereço</button>
+              </div>
+            </div>
+
+            <!-- BLOCO 3: HISTÓRICO DE PEDIDOS -->
+            <div class="painel-bloco" id="pedidos">
+              <div class="painel-bloco-cabecalho">
+                <h3>Histórico de Pedidos Realizados</h3>
+              </div>
+              <div class="painel-corpo">
+                <table class="tabela-pedidos">
+                  <thead>
+                    <tr>
+                      <th>Pedido</th>
+                      <th>Itens</th>
+                      <th>Status</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#DG-2049</td>
+                      <td>Action Figure Mecha Samurai</td>
+                      <td><span class="status-etiqueta pendente">Em Preparação</span></td>
+                      <td>R$ 349,90</td>
+                    </tr>
+                    <tr>
+                      <td>#DG-1980</td>
+                      <td>Teclado Mecânico RGB 75% Custom</td>
+                      <td><span class="status-etiqueta concluido">Entregue</span></td>
+                      <td>R$ 429,90</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-marca">DAB GEEK STORE</p>
+        <p class="rodape-marca-texto">O seu portal definitivo de colecionáveis, periféricos gamer e cultura pop. Curadoria especializada para quem leva o universo geek a sério.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html">Sobre a DAB</a></li>
+          <li><a href="contato.html">Suporte & Contato</a></li>
+        </ul>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Área do Usuário</h4>
+        <ul>
+          <li><a href="conta.html">Entrar / Cadastro</a></li>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="dashboard.html">Painel de Vendas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <p>&copy; 2026 DAB GEEK STORE — Desenvolvido por Daniel Bonilla para a disciplina de Programação em Novas Tecnologias II.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

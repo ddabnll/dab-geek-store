@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — DAB GEEK STORE</title>
+  <meta name="description" content="Conheça a história da DAB GEEK STORE, fundada por Daniel Bonilla com foco em colecionáveis, cultura gamer e produtos de alta qualidade.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sobre — DAB GEEK STORE">
+  <meta property="og:description" content="Nossa missão é conectar fãs, jogadores e colecionadores aos itens mais exclusivos do universo geek.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="marca">DAB GEEK</a>
+      <div class="nav-direita">
+        <button type="button" class="nav-carrinho" id="botao-carrinho" aria-haspopup="dialog" aria-expanded="false" aria-controls="painel-carrinho" aria-label="Abrir inventário, 0 itens">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8z"></path>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+          </svg>
+          <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
+        </button>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="conta.html" class="nav-cta">Entrar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- GAVETA LATERAL DO CARRINHO / INVENTÁRIO -->
+  <div class="carrinho-fundo" id="fundo-carrinho" hidden></div>
+  <aside class="carrinho-painel" id="painel-carrinho" role="dialog" aria-modal="true" aria-label="Seu inventário de compras" hidden>
+    <div class="carrinho-cabecalho">
+      <h2>Seu Inventário</h2>
+      <button type="button" class="carrinho-fechar" id="fechar-carrinho" aria-label="Fechar inventário">&times;</button>
+    </div>
+    <div class="carrinho-lista" id="lista-carrinho"></div>
+    <div class="carrinho-rodape">
+      <div class="carrinho-total-linha">
+        <span>Total</span>
+        <span id="total-carrinho">R$ 0,00</span>
+      </div>
+      <button type="button" class="btn btn-primario btn-bloco" id="finalizar-carrinho">Fechar Pedido</button>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo">
+    <header class="cabecalho-pagina">
+      <div class="container">
+        <p class="rotulo">Quem Somos</p>
+        <h1>O que é a DAB GEEK STORE.</h1>
+      </div>
+    </header>
+
+    <section class="secao">
+      <div class="container">
+        <div class="sobre-corpo">
+          <p>A <strong>DAB GEEK STORE</strong> nasceu da paixão genuína por tecnologia, video games, mangás e a cultura pop colecionável. Fundada pelo desenvolvedor <strong>Daniel Bonilla</strong>, a nossa proposta é simples: oferecer uma curadoria impecável de produtos que nós mesmos sonhamos em ter na nossa estante e no nosso setup.</p>
+          <p>Diferente de grandes varejistas genéricos, nós valorizamos a procedência oficial, a qualidade dos materiais (como switches mecânicos de alta durabilidade e estátuas de resina esculpidas em detalhes milimétricos) e uma experiência de compra rápida e segura, feita de fã para fã.</p>
+        </div>
+
+        <div class="valores-grade">
+          <div class="valor-item">
+            <h3>⚡ Autenticidade Garantida</h3>
+            <p>Trabalhamos exclusivamente com distribuidores licenciados. Sem cópias ou réplicas duvidosas: aqui cada figure e acessório é 100% oficial.</p>
+          </div>
+          <div class="valor-item">
+            <h3>🛡️ Curadoria Especializada</h3>
+            <p>Cada produto adicionado ao catálogo passa pelo crivo técnico da nossa equipe: testamos ergonomia, durabilidade e acabamento visual.</p>
+          </div>
+          <div class="valor-item">
+            <h3>🚀 Envio Blindado</h3>
+            <p>Sabemos o valor de uma caixa de colecionador impecável. Todos os pedidos são despachados com plástico-bolha reforçado e cantoneiras de proteção.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-marca">DAB GEEK STORE</p>
+        <p class="rodape-marca-texto">O seu portal definitivo de colecionáveis, periféricos gamer e cultura pop. Curadoria especializada para quem leva o universo geek a sério.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html">Sobre a DAB</a></li>
+          <li><a href="contato.html">Suporte & Contato</a></li>
+        </ul>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Área do Usuário</h4>
+        <ul>
+          <li><a href="conta.html">Entrar / Cadastro</a></li>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="dashboard.html">Painel de Vendas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <p>&copy; 2026 DAB GEEK STORE — Desenvolvido por Daniel Bonilla para a disciplina de Programação em Novas Tecnologias II.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

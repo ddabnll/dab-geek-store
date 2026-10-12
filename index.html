@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAB GEEK STORE — Colecionáveis, Setup & Universo Geek</title>
+  <meta name="description" content="Action figures, teclados mecânicos, luminárias de LED, vestuário gamer e itens colecionáveis selecionados por Daniel Bonilla.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DAB GEEK STORE — Colecionáveis & Universo Geek">
+  <meta property="og:description" content="Action figures oficiais, periféricos de ponta e vestuário gamer com envio para todo o Brasil.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="marca">DAB GEEK</a>
+      <div class="nav-direita">
+        <button type="button" class="nav-carrinho" id="botao-carrinho" aria-haspopup="dialog" aria-expanded="false" aria-controls="painel-carrinho" aria-label="Abrir inventário, 0 itens">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8z"></path>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+          </svg>
+          <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
+        </button>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Loja</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="conta.html" class="nav-cta">Entrar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- GAVETA LATERAL DO CARRINHO / INVENTÁRIO -->
+  <div class="carrinho-fundo" id="fundo-carrinho" hidden></div>
+  <aside class="carrinho-painel" id="painel-carrinho" role="dialog" aria-modal="true" aria-label="Seu inventário de compras" hidden>
+    <div class="carrinho-cabecalho">
+      <h2>Seu Inventário</h2>
+      <button type="button" class="carrinho-fechar" id="fechar-carrinho" aria-label="Fechar inventário">&times;</button>
+    </div>
+    <div class="carrinho-lista" id="lista-carrinho"></div>
+    <div class="carrinho-rodape">
+      <div class="carrinho-total-linha">
+        <span>Total</span>
+        <span id="total-carrinho">R$ 0,00</span>
+      </div>
+      <button type="button" class="btn btn-primario btn-bloco" id="finalizar-carrinho">Fechar Pedido</button>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grade">
+        <div>
+          <h1>Eleve seu setup. Colecione o <span>lendário</span>.</h1>
+          <p class="texto-apoio hero-texto">O melhor do multiverso gamer e da cultura pop reunido em um só lugar. Action figures colecionáveis, periféricos customizados e itens exclusivos selecionados para quem vive o mundo geek com estilo e autenticidade.</p>
+          <div class="hero-acoes">
+            <a href="#vitrine" class="btn btn-primario">Explorar Arsenal</a>
+            <a href="sobre.html" class="btn btn-contorno">Conheça a DAB</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Setup gamer futurista com iluminação RGB e periféricos mecânicos" width="800" height="600" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- VITRINE DE PRODUTOS GEEK -->
+    <section class="secao" id="vitrine">
+      <div class="container">
+        <h2>Arsenal em Destaque</h2>
+        <p class="texto-apoio">Lotes limitados, autenticidade garantida e pronta entrega para todo o Brasil.</p>
+
+        <div class="vitrine">
+          <!-- PRODUTO 1 -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--urgente">Últimas 3 unidades</span>
+              <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Action Figure Mecha Samurai Cyberpunk edição de colecionador" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Colecionáveis</span>
+              <h3>Action Figure Mecha Samurai</h3>
+              <p class="card-produto-descricao">Escala 1/6 com articulações reforçadas, armadura com acabamento metálico fosco e espadas de lâmina translúcida intercambiáveis.</p>
+              <p class="preco">R$ 349,90</p>
+              <button type="button" data-produto-id="mecha-samurai" data-produto-nome="Action Figure Mecha Samurai" data-produto-preco="349.90" aria-label="Colocar Action Figure Mecha Samurai no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 2 -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--popular">Mais Vendido</span>
+              <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Teclado mecânico RGB customizado layout 75 por cento" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Periféricos</span>
+              <h3>Teclado Mecânico RGB 75% Custom</h3>
+              <p class="card-produto-descricao">Switches táteis pré-lubrificados de fábrica, keycaps em PBT double-shot e conectividade tri-mode (Bluetooth, 2.4GHz e USB-C).</p>
+              <p class="preco">R$ 429,90</p>
+              <button type="button" data-produto-id="teclado-rgb-75" data-produto-nome="Teclado Mecânico RGB 75% Custom" data-produto-preco="429.90" aria-label="Colocar Teclado Mecânico no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 3 -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--popular">Destaque Geek</span>
+              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Luminária decorativa LED gamer pixel art" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Decoração & Setup</span>
+              <h3>Luminária LED Pixel Triforce</h3>
+              <p class="card-produto-descricao">Iluminação ambiente com 16 milhões de cores, sincronização com áudio e alimentação via cabo USB trançado de alta durabilidade.</p>
+              <p class="preco">R$ 119,90</p>
+              <button type="button" data-produto-id="luminaria-pixel" data-produto-nome="Luminária LED Pixel Triforce" data-produto-preco="119.90" aria-label="Colocar Luminária LED no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 4 -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Deskmat grande Speed Pro XL com arte synthwave neon" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Acessórios</span>
+              <h3>Deskmat Speed Pro XL Neon Tokyo</h3>
+              <p class="card-produto-descricao">Dimensões 900x400mm com 4mm de espessura, bordas costuradas reforçadas e base antiderrapante em borracha natural de alta densidade.</p>
+              <p class="preco">R$ 89,90</p>
+              <button type="button" data-produto-id="deskmat-neon" data-produto-nome="Deskmat Speed Pro XL Neon Tokyo" data-produto-preco="89.90" aria-label="Colocar Deskmat no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 5 -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Mouse gamer sem fio ultraleve" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Periféricos</span>
+              <h3>Mouse Gamer Wireless Ultraleve 26k</h3>
+              <p class="card-produto-descricao">Apenas 54 gramas, sensor óptico PixArt topo de linha com taxa de resposta de 1000Hz e bateria recarregável com até 80 horas de autonomia.</p>
+              <p class="preco">R$ 259,90</p>
+              <button type="button" data-produto-id="mouse-wireless" data-produto-nome="Mouse Gamer Wireless Ultraleve" data-produto-preco="259.90" aria-label="Colocar Mouse Gamer no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 6 -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--urgente">Edição Limitada</span>
+              <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Moletom preto oversized com estampa retrô arcade" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Vestuário</span>
+              <h3>Moletom Oversized "Insert Coin"</h3>
+              <p class="card-produto-descricao">Malha pesada 100% algodão felpudo com estampa em serigrafia de alta definição, bolso canguru e capuz forrado com regulagem dupla.</p>
+              <p class="preco">R$ 179,90</p>
+              <button type="button" data-produto-id="moletom-insert-coin" data-produto-nome="Moletom Oversized Insert Coin" data-produto-preco="179.90" aria-label="Colocar Moletom no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-marca">DAB GEEK STORE</p>
+        <p class="rodape-marca-texto">O seu portal definitivo de colecionáveis, periféricos gamer e cultura pop. Curadoria especializada para quem leva o universo geek a sério.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html">Sobre a DAB</a></li>
+          <li><a href="contato.html">Suporte & Contato</a></li>
+        </ul>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Área do Usuário</h4>
+        <ul>
+          <li><a href="conta.html">Entrar / Cadastro</a></li>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="dashboard.html">Painel de Vendas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <p>&copy; 2026 DAB GEEK STORE — Desenvolvido por Daniel Bonilla para a disciplina de Programação em Novas Tecnologias II.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — DAB GEEK STORE</title>
+  <meta name="description" content="Painel de controle e monitoramento de vendas, métricas de tráfego e pedidos da DAB GEEK STORE.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dashboard — DAB GEEK STORE">
+  <meta property="og:description" content="Painel de gestão operacional de pedidos e desempenho de vendas.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="marca">DAB GEEK</a>
+      <div class="nav-direita">
+        <button type="button" class="nav-carrinho" id="botao-carrinho" aria-haspopup="dialog" aria-expanded="false" aria-controls="painel-carrinho" aria-label="Abrir inventário, 0 itens">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8z"></path>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+          </svg>
+          <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
+        </button>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="conta.html" class="nav-cta">Entrar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- GAVETA LATERAL DO CARRINHO / INVENTÁRIO -->
+  <div class="carrinho-fundo" id="fundo-carrinho" hidden></div>
+  <aside class="carrinho-painel" id="painel-carrinho" role="dialog" aria-modal="true" aria-label="Seu inventário de compras" hidden>
+    <div class="carrinho-cabecalho">
+      <h2>Seu Inventário</h2>
+      <button type="button" class="carrinho-fechar" id="fechar-carrinho" aria-label="Fechar inventário">&times;</button>
+    </div>
+    <div class="carrinho-lista" id="lista-carrinho"></div>
+    <div class="carrinho-rodape">
+      <div class="carrinho-total-linha">
+        <span>Total</span>
+        <span id="total-carrinho">R$ 0,00</span>
+      </div>
+      <button type="button" class="btn btn-primario btn-bloco" id="finalizar-carrinho">Fechar Pedido</button>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo">
+    <header class="cabecalho-pagina">
+      <div class="container">
+        <p class="rotulo">Visão Estratégica</p>
+        <h1>Painel de Controle DAB GEEK</h1>
+      </div>
+    </header>
+
+    <section class="secao">
+      <div class="container">
+        <!-- MÉTRICAS DE DESEMPENHO -->
+        <div class="painel-resumo">
+          <div class="cartao-resumo">
+            <h3>Vendas Hoje</h3>
+            <p class="valor">R$ 4.890,00</p>
+          </div>
+          <div class="cartao-resumo">
+            <h3>Visitantes Únicos</h3>
+            <p class="valor">1.420</p>
+          </div>
+          <div class="cartao-resumo alerta">
+            <h3>Pedidos Pendentes</h3>
+            <p class="valor">7</p>
+          </div>
+        </div>
+
+        <!-- TABELA DE PEDIDOS RECENTES -->
+        <div class="painel-bloco">
+          <div class="painel-bloco-cabecalho">
+            <h3>Pedidos Recentes do Arsenal</h3>
+            <button type="button" class="btn btn-contorno btn-pequeno">Exportar Relatório</button>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="tabela-pedidos">
+              <thead>
+                <tr>
+                  <th>ID Pedido</th>
+                  <th>Cliente</th>
+                  <th>Produto(s)</th>
+                  <th>Status</th>
+                  <th>Valor Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#DG-2049</td>
+                  <td>Lucas Siqueira</td>
+                  <td>Action Figure Mecha Samurai</td>
+                  <td><span class="status-etiqueta pendente">Pendente</span></td>
+                  <td>R$ 349,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2048</td>
+                  <td>Camila Ramos</td>
+                  <td>Teclado Mecânico RGB 75% Custom</td>
+                  <td><span class="status-etiqueta enviado">Enviado</span></td>
+                  <td>R$ 429,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2047</td>
+                  <td>Felipe Andrade</td>
+                  <td>Luminária LED Pixel Triforce</td>
+                  <td><span class="status-etiqueta concluido">Concluído</span></td>
+                  <td>R$ 119,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2046</td>
+                  <td>Mariana Lopes</td>
+                  <td>Deskmat Speed Pro XL Neon Tokyo</td>
+                  <td><span class="status-etiqueta concluido">Concluído</span></td>
+                  <td>R$ 89,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2045</td>
+                  <td>Thiago Pinheiro</td>
+                  <td>Mouse Gamer Wireless Ultraleve 26k</td>
+                  <td><span class="status-etiqueta pendente">Pendente</span></td>
+                  <td>R$ 259,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2044</td>
+                  <td>Beatriz Farias</td>
+                  <td>Moletom Oversized "Insert Coin"</td>
+                  <td><span class="status-etiqueta enviado">Enviado</span></td>
+                  <td>R$ 179,90</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-marca">DAB GEEK STORE</p>
+        <p class="rodape-marca-texto">O seu portal definitivo de colecionáveis, periféricos gamer e cultura pop. Curadoria especializada para quem leva o universo geek a sério.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Loja</a></li>
+          <li><a href="sobre.html">Sobre a DAB</a></li>
+          <li><a href="contato.html">Suporte & Contato</a></li>
+        </ul>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Área do Usuário</h4>
+        <ul>
+          <li><a href="conta.html">Entrar / Cadastro</a></li>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="dashboard.html">Painel de Vendas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <p>&copy; 2026 DAB GEEK STORE — Desenvolvido por Daniel Bonilla para a disciplina de Programação em Novas Tecnologias II.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

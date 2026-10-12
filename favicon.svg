@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0B0E14"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#cyberGrad)" stroke-width="2"/>
+  <!-- Gamepad icon -->
+  <path d="M18 22 C14 22 10 26 10 32 C10 38 12 44 17 44 C20 44 22 40 25 36 L39 36 C42 40 44 44 47 44 C52 44 54 38 54 32 C54 26 50 22 46 22 Z" fill="#182030" stroke="#8B5CF6" stroke-width="2"/>
+  <!-- D-Pad -->
+  <path d="M20 28 h4 v3 h3 v4 h-3 v3 h-4 v-3 h-3 v-4 h3 z" fill="#06B6D4"/>
+  <!-- Buttons -->
+  <circle cx="44" cy="30" r="2" fill="#8B5CF6"/>
+  <circle cx="48" cy="34" r="2" fill="#10B981"/>
+  <circle cx="40" cy="34" r="2" fill="#F43F5E"/>
+  <circle cx="44" cy="38" r="2" fill="#EAB308"/>
+</svg>
