@@ -1,6 +1,6 @@
-﻿
+// DAB GEEK STORE — Interações e Lógica de E-commerce
 
-
+// 1. Menu Mobile
 document.addEventListener("DOMContentLoaded", function () {
   var botao = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav-links");
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
+// 2. Abas de Login e Cadastro (conta.html)
 document.addEventListener("DOMContentLoaded", function () {
   var botoesAba = document.querySelectorAll(".aba-botao, .trocar-aba");
   var paineis = {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.location.hash === "#cadastro") ativarAba("cadastro");
 });
 
-
+// 3. Validação de Formulários
 document.addEventListener("DOMContentLoaded", function () {
   var formularios = document.querySelectorAll("form[novalidate]");
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (senha && confirmacao && senha.value && confirmacao.value && senha.value !== confirmacao.value) {
       valido = false;
       limparErro(confirmacao);
-      mostrarErro(confirmacao, "As senhas nÃ£o coincidem. Digite novamente.");
+      mostrarErro(confirmacao, "As senhas não coincidem. Digite novamente.");
       primeiroInvalido = primeiroInvalido || confirmacao;
     }
 
@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function mensagemErro(campo) {
     if (campo.validity.valueMissing) return "Preencha este campo antes de continuar.";
-    if (campo.validity.typeMismatch && campo.type === "email") return "Digite um endereÃ§o de e-mail vÃ¡lido.";
-    if (campo.validity.typeMismatch) return "Valor invÃ¡lido.";
+    if (campo.validity.typeMismatch && campo.type === "email") return "Digite um endereço de e-mail válido.";
+    if (campo.validity.typeMismatch) return "Valor inválido.";
     if (campo.validity.tooShort) {
       var faltam = campo.minLength - campo.value.length;
       return "Faltam " + faltam + (faltam === 1 ? " caractere." : " caracteres.");
@@ -156,12 +156,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var aviso = document.createElement("p");
     aviso.className = "aviso-sucesso";
     aviso.setAttribute("role", "status");
-    aviso.textContent = "âœ“ AÃ§Ã£o processada com sucesso! (ProtÃ³tipo do projeto DAB GEEK STORE).";
+    aviso.textContent = "✓ Ação processada com sucesso! (Protótipo do projeto DAB GEEK STORE).";
     form.insertBefore(aviso, form.firstChild);
   }
 });
 
-
+// 4. Sacola de Compras / Inventário (E-commerce)
 document.addEventListener("DOMContentLoaded", function () {
   var CHAVE_CARRINHO = "dab-geek-carrinho";
 
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
     aviso.className = "aviso-erro";
     aviso.style.display = "block";
     aviso.setAttribute("role", "alert");
-    aviso.textContent = "Seu inventÃ¡rio estÃ¡ vazio. Escolha um item da loja!";
+    aviso.textContent = "Seu inventário está vazio. Escolha um item da loja!";
     carrinhoRodape.insertBefore(aviso, carrinhoRodape.firstChild);
   }
 
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(itens));
     } catch (erro) {
-      
+      // Ignora erro em caso de restrição de storage
     }
     limparAvisoCarrinhoVazio();
     renderizarCarrinho();
@@ -259,13 +259,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (botaoCarrinho) {
       var rotulo = totalItens === 1 ? " item" : " itens";
-      botaoCarrinho.setAttribute("aria-label", "Abrir inventÃ¡rio, " + totalItens + rotulo);
+      botaoCarrinho.setAttribute("aria-label", "Abrir inventário, " + totalItens + rotulo);
     }
 
     if (!listaCarrinho) return;
 
     if (itens.length === 0) {
-      listaCarrinho.innerHTML = '<p class="carrinho-vazio">Seu inventÃ¡rio estÃ¡ vazio.<br><a href="index.html#vitrine">Explorar arsenal da loja</a></p>';
+      listaCarrinho.innerHTML = '<p class="carrinho-vazio">Seu inventário está vazio.<br><a href="index.html#vitrine">Explorar arsenal da loja</a></p>';
     } else {
       listaCarrinho.innerHTML = itens.map(function (item) {
         return (
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
               '<button type="button" class="carrinho-qtd-btn" data-acao="diminuir" aria-label="Diminuir quantidade de ' + item.nome + '">&minus;</button>' +
               '<span class="carrinho-qtd-valor">' + item.quantidade + '</span>' +
               '<button type="button" class="carrinho-qtd-btn" data-acao="aumentar" aria-label="Aumentar quantidade de ' + item.nome + '">&plus;</button>' +
-              '<button type="button" class="carrinho-remover" aria-label="Remover ' + item.nome + ' do inventÃ¡rio">Remover</button>' +
+              '<button type="button" class="carrinho-remover" aria-label="Remover ' + item.nome + ' do inventário">Remover</button>' +
             '</div>' +
           '</div>'
         );
@@ -288,14 +288,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (totalCarrinho) totalCarrinho.textContent = formatarPreco(totalPreco);
   }
 
-  
+  // Efeito de feedback nos botões dos produtos
   document.querySelectorAll(".card-produto button").forEach(function (botao) {
     var textoOriginal = botao.textContent;
     var timer = null;
 
     botao.addEventListener("click", function () {
       clearTimeout(timer);
-      botao.textContent = "Adicionado âœ“";
+      botao.textContent = "Adicionado ✓";
       botao.classList.add("confirmado");
       timer = setTimeout(function () {
         botao.textContent = textoOriginal;
@@ -370,4 +370,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderizarCarrinho();
 });
-

@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Perfil â€” DAB GEEK STORE</title>
-  <meta name="description" content="Gerenciamento de perfil, nÃ­vel de XP, endereÃ§os e histÃ³rico de pedidos na DAB GEEK STORE.">
+  <title>Meu Perfil — DAB GEEK STORE</title>
+  <meta name="description" content="Gerenciamento de perfil, nível de XP, endereços e histórico de pedidos na DAB GEEK STORE.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Meu Perfil â€” DAB GEEK STORE">
+  <meta property="og:title" content="Meu Perfil — DAB GEEK STORE">
   <meta property="og:description" content="Acesse seus dados cadastrais e acompanhe o status de envio de seus pedidos.">
   <meta property="og:image" content="assets/img/img1.jpg">
   <meta property="og:url" content="https://ddabnll.github.io/dab-geek-store/perfil.html">
@@ -21,7 +21,7 @@
 <body>
   <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
 
-  
+  <!-- BARRA DE NAVEGAÇÃO -->
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="marca">DAB GEEK</a>
@@ -48,11 +48,11 @@
     </div>
   </nav>
 
-  
+  <!-- GAVETA LATERAL DO CARRINHO / INVENTÁRIO -->
   <div class="carrinho-fundo" id="fundo-carrinho" hidden></div>
   <aside class="carrinho-painel" id="painel-carrinho" role="dialog" aria-modal="true" aria-label="Seu inventário de compras" hidden>
     <div class="carrinho-cabecalho">
-      <h2>Seu inventário</h2>
+      <h2>Seu Inventário</h2>
       <button type="button" class="carrinho-fechar" id="fechar-carrinho" aria-label="Fechar inventário">&times;</button>
     </div>
     <div class="carrinho-lista" id="lista-carrinho"></div>
@@ -65,11 +65,11 @@
     </div>
   </aside>
 
-  
+  <!-- CONTEÚDO PRINCIPAL -->
   <main id="conteudo">
     <header class="cabecalho-pagina">
       <div class="container">
-        <p class="rotulo">Ãrea do Colecionador</p>
+        <p class="rotulo">Área do Colecionador</p>
         <h1>Meu Perfil</h1>
       </div>
     </header>
@@ -77,31 +77,31 @@
     <section class="secao">
       <div class="container">
         <div class="perfil-grade">
-          
+          <!-- CARD LATERAL COM INFORMAÇÕES RESUMIDAS -->
           <aside class="perfil-cartao" aria-label="Resumo do perfil">
             <div class="perfil-avatar" aria-hidden="true">DB</div>
             <h2>Daniel Bonilla</h2>
-            <span class="categoria">Rank Ouro â€¢ NÃ­vel 31</span>
+            <span class="categoria">Rank Ouro • Nível 31</span>
             <p style="font-size: 13px; color: var(--ink-faint); margin-top: 4px;">3.420 XP Acumulados</p>
             <nav aria-label="Menu do perfil">
               <ul class="perfil-lista">
                 <li><a href="#dados">Meus Dados</a></li>
-                <li><a href="#enderecos">EndereÃ§os de Envio</a></li>
-                <li><a href="#pedidos">HistÃ³rico de Pedidos</a></li>
+                <li><a href="#enderecos">Endereços de Envio</a></li>
+                <li><a href="#pedidos">Histórico de Pedidos</a></li>
                 <li><a href="conta.html">Desconectar da Base</a></li>
               </ul>
             </nav>
           </aside>
 
-          
+          <!-- CONTEÚDO PRINCIPAL DO PERFIL -->
           <div class="painel-conteudo">
-            
+            <!-- BLOCO 1: DADOS PESSOAIS -->
             <div class="painel-bloco" id="dados">
               <div class="painel-bloco-cabecalho">
                 <h3>Dados Cadastrais</h3>
               </div>
               <div class="painel-corpo">
-                <form novalidate aria-label="FormulÃ¡rio de dados cadastrais">
+                <form novalidate aria-label="Formulário de dados cadastrais">
                   <div class="campo">
                     <label for="perfil-nome">Nome Completo</label>
                     <input type="text" id="perfil-nome" name="nome" value="Daniel de Andrade Bonilla" required autocomplete="name">
@@ -114,33 +114,33 @@
                     <label for="perfil-tel">WhatsApp / Telefone</label>
                     <input type="tel" id="perfil-tel" name="telefone" value="(81) 99735-4423" autocomplete="tel">
                   </div>
-                  <button type="submit" class="btn btn-primario">Salvar AlteraÃ§Ãµes</button>
+                  <button type="submit" class="btn btn-primario">Salvar Alterações</button>
                 </form>
               </div>
             </div>
 
-            
+            <!-- BLOCO 2: ENDEREÇOS -->
             <div class="painel-bloco" id="enderecos">
               <div class="painel-bloco-cabecalho">
-                <h3>EndereÃ§o de Entrega Principal</h3>
+                <h3>Endereço de Entrega Principal</h3>
               </div>
               <div class="painel-corpo">
                 <address style="font-style: normal;">
-                  <p style="color: #FFFFFF; font-weight: 600; margin-bottom: 4px;">Recife â€” Pernambuco</p>
-                  <p style="color: var(--ink-soft); font-size: 14px; margin-bottom: 16px;">CEP 50000-000 â€¢ Brasil</p>
+                  <p style="color: #FFFFFF; font-weight: 600; margin-bottom: 4px;">Recife — Pernambuco</p>
+                  <p style="color: var(--ink-soft); font-size: 14px; margin-bottom: 16px;">CEP 50000-000 • Brasil</p>
                 </address>
-                <button type="button" class="btn btn-contorno btn-pequeno">Editar EndereÃ§o</button>
+                <button type="button" class="btn btn-contorno btn-pequeno">Editar Endereço</button>
               </div>
             </div>
 
-            
+            <!-- BLOCO 3: HISTÓRICO DE PEDIDOS -->
             <div class="painel-bloco" id="pedidos">
               <div class="painel-bloco-cabecalho">
-                <h3>HistÃ³rico de Pedidos Realizados</h3>
+                <h3>Histórico de Pedidos Realizados</h3>
               </div>
               <div class="painel-corpo" style="overflow-x: auto;">
                 <table class="tabela-pedidos">
-                  <caption class="sr-only">HistÃ³rico de pedidos do usuÃ¡rio com status de entrega</caption>
+                  <caption class="sr-only">Histórico de pedidos do usuário com status de entrega</caption>
                   <thead>
                     <tr>
                       <th scope="col">Pedido</th>
@@ -153,7 +153,7 @@
                     <tr>
                       <td>#DG-2058</td>
                       <td>Action Figure Mecha Samurai</td>
-                      <td><span class="status-etiqueta pendente">Em PreparaÃ§Ã£o</span></td>
+                      <td><span class="status-etiqueta pendente">Em Preparação</span></td>
                       <td>R$ 349,90</td>
                     </tr>
                     <tr>
@@ -164,7 +164,7 @@
                     </tr>
                     <tr>
                       <td>#DG-2031</td>
-                      <td>Teclado mecânico RGB 75% Custom</td>
+                      <td>Teclado Mecânico RGB 75% Custom</td>
                       <td><span class="status-etiqueta concluido">Entregue</span></td>
                       <td>R$ 429,90</td>
                     </tr>
@@ -176,7 +176,7 @@
                     </tr>
                     <tr>
                       <td>#DG-1998</td>
-                      <td>Box Especial Mangá Holográfico Vol. 1-5</td>
+                      <td>Box Especial Mangá Holográfico Vol. 1–5</td>
                       <td><span class="status-etiqueta concluido">Entregue</span></td>
                       <td>R$ 219,90</td>
                     </tr>
@@ -190,15 +190,15 @@
     </section>
   </main>
 
-  
+  <!-- RODAPÉ -->
   <footer>
     <div class="container rodape-grade">
       <div>
         <p class="rodape-marca">DAB GEEK STORE</p>
-        <p class="rodape-marca-texto">O seu portal definitivo de colecionáveis, periféricos gamer e cultura pop. Curadoria especializada para quem leva o universo geek a sÃ©rio.</p>
+        <p class="rodape-marca-texto">O seu portal definitivo de colecionáveis, periféricos gamer e cultura pop. Curadoria especializada para quem leva o universo geek a sério.</p>
       </div>
       <div class="rodape-coluna">
-        <h4>NavegaÃ§Ã£o</h4>
+        <h4>Navegação</h4>
         <ul>
           <li><a href="index.html">Loja</a></li>
           <li><a href="sobre.html">Sobre a DAB</a></li>
@@ -206,7 +206,7 @@
         </ul>
       </div>
       <div class="rodape-coluna">
-        <h4>Ãrea do UsuÃ¡rio</h4>
+        <h4>Área do Usuário</h4>
         <ul>
           <li><a href="conta.html">Entrar / Cadastro</a></li>
           <li><a href="perfil.html">Meu Perfil</a></li>
@@ -215,12 +215,10 @@
       </div>
     </div>
     <div class="rodape-base">
-      <p>&copy; 2026 DAB GEEK STORE â€” Desenvolvido por Daniel Bonilla para a disciplina de ProgramaÃ§Ã£o em Novas Tecnologias II.</p>
+      <p>&copy; 2026 DAB GEEK STORE — Desenvolvido por Daniel Bonilla para a disciplina de Programação em Novas Tecnologias II.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
