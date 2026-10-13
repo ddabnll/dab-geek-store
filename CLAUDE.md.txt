@@ -1,0 +1,13 @@
+# Diretrizes de Auditoria e Qualidade — E-Commerce HTML (Novas Tecnologias II)
+
+## Regras de Código HTML5
+- **Semântica:** Substituir `<div>` genéricos por tags semânticas adequadas (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>` para cards de produto, `<footer>`).
+- **Acessibilidade (WCAG/a11y):**
+  - Garantir que todas as imagens de produtos possuem atributos `alt` descritivos.
+  - Todos os campos de formulário (busca, login, checkout) devem ter tags `<label>` associadas e atributos `aria-label` quando necessário.
+- **SEO & Head Tags:** Garantir que todas as páginas HTML contenham `<title>` específico, `<meta name="description">`, `<meta viewport>` e favicons.
+
+## Organização do Repositório GitHub
+- Garantir que a estrutura de pastas esteja limpa (`index.html` na raiz, páginas secundárias em `/pages` ou na raiz, imagens em `/assets/img`).
+- Manter o ficheiro `README.md` atualizado, profissional e documentado com os links para as páginas.
+- Manter mensagens de commit no padrão *Conventional Commits* (`feat:`, `fix:`, `docs:`, `style:`).
