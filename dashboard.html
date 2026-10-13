@@ -8,7 +8,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dashboard — DAB GEEK STORE">
   <meta property="og:description" content="Painel de gestão operacional de pedidos e desempenho de vendas.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1593640408182-31c228f36b91?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://ddabnll.github.io/dab-geek-store/dashboard.html">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,7 +33,7 @@
           </svg>
           <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
         </button>
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
@@ -73,21 +74,26 @@
       </div>
     </header>
 
-    <section class="secao">
+    <section class="secao" aria-labelledby="titulo-dashboard">
+      <h2 id="titulo-dashboard" class="sr-only">Métricas e Pedidos</h2>
       <div class="container">
         <!-- MÉTRICAS DE DESEMPENHO -->
         <div class="painel-resumo">
           <div class="cartao-resumo">
             <h3>Vendas Hoje</h3>
-            <p class="valor">R$ 4.890,00</p>
+            <p class="valor">R$ 8.340,00</p>
           </div>
           <div class="cartao-resumo">
             <h3>Visitantes Únicos</h3>
-            <p class="valor">1.420</p>
+            <p class="valor">2.718</p>
           </div>
           <div class="cartao-resumo alerta">
             <h3>Pedidos Pendentes</h3>
-            <p class="valor">7</p>
+            <p class="valor">12</p>
+          </div>
+          <div class="cartao-resumo">
+            <h3>Produtos no Catálogo</h3>
+            <p class="valor">12</p>
           </div>
         </div>
 
@@ -99,57 +105,100 @@
           </div>
           <div style="overflow-x: auto;">
             <table class="tabela-pedidos">
+              <caption class="sr-only">Lista dos pedidos mais recentes com status e valor</caption>
               <thead>
                 <tr>
-                  <th>ID Pedido</th>
-                  <th>Cliente</th>
-                  <th>Produto(s)</th>
-                  <th>Status</th>
-                  <th>Valor Total</th>
+                  <th scope="col">ID Pedido</th>
+                  <th scope="col">Cliente</th>
+                  <th scope="col">Produto(s)</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Valor Total</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>#DG-2049</td>
+                  <td>#DG-2060</td>
+                  <td>Rafael Nunes</td>
+                  <td>Cadeira Gamer Pro Ergonômica 4D</td>
+                  <td><span class="status-etiqueta pendente">Pendente</span></td>
+                  <td>R$ 1.299,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2059</td>
+                  <td>Amanda Souza</td>
+                  <td>Controle Pro Sem Fio RGB Elite</td>
+                  <td><span class="status-etiqueta enviado">Enviado</span></td>
+                  <td>R$ 389,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2058</td>
                   <td>Lucas Siqueira</td>
                   <td>Action Figure Mecha Samurai</td>
                   <td><span class="status-etiqueta pendente">Pendente</span></td>
                   <td>R$ 349,90</td>
                 </tr>
                 <tr>
-                  <td>#DG-2048</td>
+                  <td>#DG-2057</td>
                   <td>Camila Ramos</td>
                   <td>Teclado Mecânico RGB 75% Custom</td>
                   <td><span class="status-etiqueta enviado">Enviado</span></td>
                   <td>R$ 429,90</td>
                 </tr>
                 <tr>
-                  <td>#DG-2047</td>
+                  <td>#DG-2056</td>
+                  <td>Juliana Castro</td>
+                  <td>Headset Gamer Wireless 7.1</td>
+                  <td><span class="status-etiqueta concluido">Concluído</span></td>
+                  <td>R$ 319,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2055</td>
                   <td>Felipe Andrade</td>
                   <td>Luminária LED Pixel Triforce</td>
                   <td><span class="status-etiqueta concluido">Concluído</span></td>
                   <td>R$ 119,90</td>
                 </tr>
                 <tr>
-                  <td>#DG-2046</td>
+                  <td>#DG-2054</td>
                   <td>Mariana Lopes</td>
-                  <td>Deskmat Speed Pro XL Neon Tokyo</td>
+                  <td>Box Especial Mangá Holográfico Vol. 1–5</td>
                   <td><span class="status-etiqueta concluido">Concluído</span></td>
-                  <td>R$ 89,90</td>
+                  <td>R$ 219,90</td>
                 </tr>
                 <tr>
-                  <td>#DG-2045</td>
+                  <td>#DG-2053</td>
                   <td>Thiago Pinheiro</td>
                   <td>Mouse Gamer Wireless Ultraleve 26k</td>
                   <td><span class="status-etiqueta pendente">Pendente</span></td>
                   <td>R$ 259,90</td>
                 </tr>
                 <tr>
-                  <td>#DG-2044</td>
+                  <td>#DG-2052</td>
                   <td>Beatriz Farias</td>
                   <td>Moletom Oversized "Insert Coin"</td>
                   <td><span class="status-etiqueta enviado">Enviado</span></td>
                   <td>R$ 179,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2051</td>
+                  <td>Pedro Lima</td>
+                  <td>Mochila Gamer Tactical Bag 30L</td>
+                  <td><span class="status-etiqueta concluido">Concluído</span></td>
+                  <td>R$ 159,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2050</td>
+                  <td>Giovanna Melo</td>
+                  <td>Fita LED ARGB Kit Gamer 3m</td>
+                  <td><span class="status-etiqueta concluido">Concluído</span></td>
+                  <td>R$ 74,90</td>
+                </tr>
+                <tr>
+                  <td>#DG-2049</td>
+                  <td>Carlos Henrique</td>
+                  <td>Deskmat Speed Pro XL Neon Tokyo</td>
+                  <td><span class="status-etiqueta enviado">Enviado</span></td>
+                  <td>R$ 89,90</td>
                 </tr>
               </tbody>
             </table>

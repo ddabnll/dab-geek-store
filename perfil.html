@@ -8,7 +8,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Meu Perfil — DAB GEEK STORE">
   <meta property="og:description" content="Acesse seus dados cadastrais e acompanhe o status de envio de seus pedidos.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1593640408182-31c228f36b91?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://ddabnll.github.io/dab-geek-store/perfil.html">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,7 +33,7 @@
           </svg>
           <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
         </button>
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
@@ -77,17 +78,19 @@
       <div class="container">
         <div class="perfil-grade">
           <!-- CARD LATERAL COM INFORMAÇÕES RESUMIDAS -->
-          <aside class="perfil-cartao">
-            <div class="perfil-avatar">DB</div>
-            <h3>Daniel Bonilla</h3>
-            <span class="categoria">Rank Ouro • Nível 24</span>
-            <p style="font-size: 13px; color: var(--ink-faint); margin-top: 4px;">1.850 XP Acumulados</p>
-            <ul class="perfil-lista">
-              <li><a href="#dados">Meus Dados</a></li>
-              <li><a href="#enderecos">Endereços de Envio</a></li>
-              <li><a href="#pedidos">Histórico de Pedidos</a></li>
-              <li><a href="conta.html">Desconectar da Base</a></li>
-            </ul>
+          <aside class="perfil-cartao" aria-label="Resumo do perfil">
+            <div class="perfil-avatar" aria-hidden="true">DB</div>
+            <h2>Daniel Bonilla</h2>
+            <span class="categoria">Rank Ouro • Nível 31</span>
+            <p style="font-size: 13px; color: var(--ink-faint); margin-top: 4px;">3.420 XP Acumulados</p>
+            <nav aria-label="Menu do perfil">
+              <ul class="perfil-lista">
+                <li><a href="#dados">Meus Dados</a></li>
+                <li><a href="#enderecos">Endereços de Envio</a></li>
+                <li><a href="#pedidos">Histórico de Pedidos</a></li>
+                <li><a href="conta.html">Desconectar da Base</a></li>
+              </ul>
+            </nav>
           </aside>
 
           <!-- CONTEÚDO PRINCIPAL DO PERFIL -->
@@ -98,18 +101,18 @@
                 <h3>Dados Cadastrais</h3>
               </div>
               <div class="painel-corpo">
-                <form novalidate>
+                <form novalidate aria-label="Formulário de dados cadastrais">
                   <div class="campo">
                     <label for="perfil-nome">Nome Completo</label>
-                    <input type="text" id="perfil-nome" value="Daniel de Andrade Bonilla" required>
+                    <input type="text" id="perfil-nome" name="nome" value="Daniel de Andrade Bonilla" required autocomplete="name">
                   </div>
                   <div class="campo">
                     <label for="perfil-email">E-mail Cadastrado</label>
-                    <input type="email" id="perfil-email" value="danielbonilla321@gmail.com" required>
+                    <input type="email" id="perfil-email" name="email" value="danielbonilla321@gmail.com" required autocomplete="email">
                   </div>
                   <div class="campo">
                     <label for="perfil-tel">WhatsApp / Telefone</label>
-                    <input type="tel" id="perfil-tel" value="(81) 99735-4423">
+                    <input type="tel" id="perfil-tel" name="telefone" value="(81) 99735-4423" autocomplete="tel">
                   </div>
                   <button type="submit" class="btn btn-primario">Salvar Alterações</button>
                 </form>
@@ -122,8 +125,10 @@
                 <h3>Endereço de Entrega Principal</h3>
               </div>
               <div class="painel-corpo">
-                <p style="color: #FFFFFF; font-weight: 600; margin-bottom: 4px;">Recife — Pernambuco</p>
-                <p style="color: var(--ink-soft); font-size: 14px; margin-bottom: 16px;">CEP 50000-000 • Brasil</p>
+                <address style="font-style: normal;">
+                  <p style="color: #FFFFFF; font-weight: 600; margin-bottom: 4px;">Recife — Pernambuco</p>
+                  <p style="color: var(--ink-soft); font-size: 14px; margin-bottom: 16px;">CEP 50000-000 • Brasil</p>
+                </address>
                 <button type="button" class="btn btn-contorno btn-pequeno">Editar Endereço</button>
               </div>
             </div>
@@ -133,28 +138,47 @@
               <div class="painel-bloco-cabecalho">
                 <h3>Histórico de Pedidos Realizados</h3>
               </div>
-              <div class="painel-corpo">
+              <div class="painel-corpo" style="overflow-x: auto;">
                 <table class="tabela-pedidos">
+                  <caption class="sr-only">Histórico de pedidos do usuário com status de entrega</caption>
                   <thead>
                     <tr>
-                      <th>Pedido</th>
-                      <th>Itens</th>
-                      <th>Status</th>
-                      <th>Valor</th>
+                      <th scope="col">Pedido</th>
+                      <th scope="col">Itens</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Valor</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>#DG-2049</td>
+                      <td>#DG-2058</td>
                       <td>Action Figure Mecha Samurai</td>
                       <td><span class="status-etiqueta pendente">Em Preparação</span></td>
                       <td>R$ 349,90</td>
                     </tr>
                     <tr>
-                      <td>#DG-1980</td>
+                      <td>#DG-2040</td>
+                      <td>Headset Gamer Wireless 7.1</td>
+                      <td><span class="status-etiqueta concluido">Entregue</span></td>
+                      <td>R$ 319,90</td>
+                    </tr>
+                    <tr>
+                      <td>#DG-2031</td>
                       <td>Teclado Mecânico RGB 75% Custom</td>
                       <td><span class="status-etiqueta concluido">Entregue</span></td>
                       <td>R$ 429,90</td>
+                    </tr>
+                    <tr>
+                      <td>#DG-2018</td>
+                      <td>Mouse Gamer Wireless Ultraleve 26k</td>
+                      <td><span class="status-etiqueta concluido">Entregue</span></td>
+                      <td>R$ 259,90</td>
+                    </tr>
+                    <tr>
+                      <td>#DG-1998</td>
+                      <td>Box Especial Mangá Holográfico Vol. 1–5</td>
+                      <td><span class="status-etiqueta concluido">Entregue</span></td>
+                      <td>R$ 219,90</td>
                     </tr>
                   </tbody>
                 </table>

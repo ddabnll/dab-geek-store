@@ -855,10 +855,23 @@ button, input, textarea, select {
   display: none !important;
 }
 
+/* ACESSIBILIDADE — visível apenas para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* DASHBOARD */
 .painel-resumo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
 }
@@ -983,7 +996,7 @@ button, input, textarea, select {
   box-shadow: var(--glow-purple);
 }
 
-.perfil-cartao h3 {
+.perfil-cartao h2, .perfil-cartao h3 {
   font-size: 18px;
   color: #FFFFFF;
   margin-bottom: 4px;

@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAB GEEK STORE — Colecionáveis, Setup & Universo Geek</title>
-  <meta name="description" content="Action figures, teclados mecânicos, luminárias de LED, vestuário gamer e itens colecionáveis selecionados por Daniel Bonilla.">
+  <meta name="description" content="Action figures, teclados mecânicos, headsets gamer, luminárias de LED, vestuário e itens colecionáveis selecionados por Daniel Bonilla.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="DAB GEEK STORE — Colecionáveis & Universo Geek">
   <meta property="og:description" content="Action figures oficiais, periféricos de ponta e vestuário gamer com envio para todo o Brasil.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1593640408182-31c228f36b91?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://ddabnll.github.io/dab-geek-store/">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DAB GEEK STORE — Colecionáveis & Universo Geek">
+  <meta name="twitter:description" content="Action figures oficiais, periféricos de ponta e vestuário gamer com envio para todo o Brasil.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +35,7 @@
           </svg>
           <span class="nav-carrinho-contagem" id="contagem-carrinho" hidden>0</span>
         </button>
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
@@ -78,23 +81,34 @@
           </div>
         </div>
         <div class="hero-visual">
-          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Setup gamer futurista com iluminação RGB e periféricos mecânicos" width="800" height="600" fetchpriority="high">
+          <img
+            src="https://images.unsplash.com/photo-1593640408182-31c228f36b91?auto=format&fit=crop&w=800&q=80"
+            alt="Setup gamer cyberpunk com teclado mecânico RGB, monitor ultrawide e iluminação neon"
+            width="800"
+            height="600"
+            fetchpriority="high"
+          >
         </div>
       </div>
     </section>
 
     <!-- VITRINE DE PRODUTOS GEEK -->
-    <section class="secao" id="vitrine">
+    <section class="secao" id="vitrine" aria-labelledby="titulo-vitrine">
       <div class="container">
-        <h2>Arsenal em Destaque</h2>
+        <h2 id="titulo-vitrine">Arsenal em Destaque</h2>
         <p class="texto-apoio">Lotes limitados, autenticidade garantida e pronta entrega para todo o Brasil.</p>
 
         <div class="vitrine">
-          <!-- PRODUTO 1 -->
+
+          <!-- PRODUTO 1 — Action Figure -->
           <article class="card-produto">
             <div class="card-produto-imagem">
               <span class="tag-estoque tag-estoque--urgente">Últimas 3 unidades</span>
-              <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Action Figure Mecha Samurai Cyberpunk edição de colecionador" width="400" height="300" loading="lazy" decoding="async">
+              <img
+                src="https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?auto=format&fit=crop&w=600&q=80"
+                alt="Action Figure Mecha Samurai Cyberpunk edição de colecionador em escala 1/6 com armadura metálica"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
             </div>
             <div class="card-produto-corpo">
               <span class="categoria">Colecionáveis</span>
@@ -105,11 +119,15 @@
             </div>
           </article>
 
-          <!-- PRODUTO 2 -->
+          <!-- PRODUTO 2 — Teclado -->
           <article class="card-produto">
             <div class="card-produto-imagem">
               <span class="tag-estoque tag-estoque--popular">Mais Vendido</span>
-              <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Teclado mecânico RGB customizado layout 75 por cento" width="400" height="300" loading="lazy" decoding="async">
+              <img
+                src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80"
+                alt="Teclado mecânico compacto 75% com iluminação RGB por tecla e keycaps em PBT"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
             </div>
             <div class="card-produto-corpo">
               <span class="categoria">Periféricos</span>
@@ -120,11 +138,34 @@
             </div>
           </article>
 
-          <!-- PRODUTO 3 -->
+          <!-- PRODUTO 3 — Headset -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--popular">Novo</span>
+              <img
+                src="https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=600&q=80"
+                alt="Headset gamer sem fio com iluminação RGB, almofadas de memory foam e som surround 7.1"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Periféricos</span>
+              <h3>Headset Gamer Wireless 7.1 Surround</h3>
+              <p class="card-produto-descricao">Áudio surround virtual 7.1, almofadas de couro respirável, microfone cardioide retrátil com cancelamento de ruído e bateria de 30 horas.</p>
+              <p class="preco">R$ 319,90</p>
+              <button type="button" data-produto-id="headset-wireless" data-produto-nome="Headset Gamer Wireless 7.1" data-produto-preco="319.90" aria-label="Colocar Headset Gamer no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 4 — Luminária -->
           <article class="card-produto">
             <div class="card-produto-imagem">
               <span class="tag-estoque tag-estoque--popular">Destaque Geek</span>
-              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Luminária decorativa LED gamer pixel art" width="400" height="300" loading="lazy" decoding="async">
+              <img
+                src="https://images.unsplash.com/photo-1563396983906-b3795482a59a?auto=format&fit=crop&w=600&q=80"
+                alt="Luminária decorativa LED em formato de espada de pixel art com 16 milhões de cores"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
             </div>
             <div class="card-produto-corpo">
               <span class="categoria">Decoração & Setup</span>
@@ -135,10 +176,14 @@
             </div>
           </article>
 
-          <!-- PRODUTO 4 -->
+          <!-- PRODUTO 5 — Deskmat -->
           <article class="card-produto">
             <div class="card-produto-imagem">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Deskmat grande Speed Pro XL com arte synthwave neon" width="400" height="300" loading="lazy" decoding="async">
+              <img
+                src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?auto=format&fit=crop&w=600&q=80"
+                alt="Deskmat XXL com arte synthwave neon de cidade futurista e base antiderrapante"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
             </div>
             <div class="card-produto-corpo">
               <span class="categoria">Acessórios</span>
@@ -149,10 +194,14 @@
             </div>
           </article>
 
-          <!-- PRODUTO 5 -->
+          <!-- PRODUTO 6 — Mouse -->
           <article class="card-produto">
             <div class="card-produto-imagem">
-              <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Mouse gamer sem fio ultraleve" width="400" height="300" loading="lazy" decoding="async">
+              <img
+                src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80"
+                alt="Mouse gamer sem fio ultraleve preto com sensor óptico de alta precisão"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
             </div>
             <div class="card-produto-corpo">
               <span class="categoria">Periféricos</span>
@@ -163,11 +212,34 @@
             </div>
           </article>
 
-          <!-- PRODUTO 6 -->
+          <!-- PRODUTO 7 — Controle -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--popular">Gamer Choice</span>
+              <img
+                src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=600&q=80"
+                alt="Controle gamer pro sem fio com gatilhos adaptáveis, grip texturizado e luzes RGB nas bordas"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Periféricos</span>
+              <h3>Controle Pro Sem Fio RGB Elite</h3>
+              <p class="card-produto-descricao">Gatilhos adaptáveis com resistência ajustável em 3 níveis, grip de borracha texturizada, vibração háptica 4D e bateria de 40 horas de autonomia.</p>
+              <p class="preco">R$ 389,90</p>
+              <button type="button" data-produto-id="controle-pro-rgb" data-produto-nome="Controle Pro Sem Fio RGB Elite" data-produto-preco="389.90" aria-label="Colocar Controle Pro no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 8 — Moletom -->
           <article class="card-produto">
             <div class="card-produto-imagem">
               <span class="tag-estoque tag-estoque--urgente">Edição Limitada</span>
-              <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Moletom preto oversized com estampa retrô arcade" width="400" height="300" loading="lazy" decoding="async">
+              <img
+                src="https://images.unsplash.com/photo-1614790789581-a3d6f62db2ad?auto=format&fit=crop&w=600&q=80"
+                alt="Moletom oversized preto com estampa retro pixel art arcade em serigrafia de alta definição"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
             </div>
             <div class="card-produto-corpo">
               <span class="categoria">Vestuário</span>
@@ -177,6 +249,81 @@
               <button type="button" data-produto-id="moletom-insert-coin" data-produto-nome="Moletom Oversized Insert Coin" data-produto-preco="179.90" aria-label="Colocar Moletom no inventário">Colocar no Inventário</button>
             </div>
           </article>
+
+          <!-- PRODUTO 9 — Fita LED -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <img
+                src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?auto=format&fit=crop&w=600&q=80"
+                alt="Fita LED RGB ARGB de 3 metros para setup gamer com controle de app e suporte a sincronização"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Decoração & Setup</span>
+              <h3>Fita LED ARGB Kit Gamer 3m</h3>
+              <p class="card-produto-descricao">3 metros de fita LED ARGB endereçável por segmento, compatível com Aura Sync e iCUE, controle via app e mais de 200 efeitos pré-definidos.</p>
+              <p class="preco">R$ 74,90</p>
+              <button type="button" data-produto-id="fita-led-argb" data-produto-nome="Fita LED ARGB Kit Gamer 3m" data-produto-preco="74.90" aria-label="Colocar Fita LED no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 10 — Mangá -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--popular">Cultura Pop</span>
+              <img
+                src="https://images.unsplash.com/photo-1601850494422-3cf06be9b31c?auto=format&fit=crop&w=600&q=80"
+                alt="Box especial colecionável de mangás com capa holográfica e pôster exclusivo incluso"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Mangá & Anime</span>
+              <h3>Box Especial Mangá Holográfico Vol. 1–5</h3>
+              <p class="card-produto-descricao">Box colecionável com 5 volumes em capa dura, impressão holográfica exclusiva, marcador de página lenticular e pôster A3 numerado.</p>
+              <p class="preco">R$ 219,90</p>
+              <button type="button" data-produto-id="box-manga-holo" data-produto-nome="Box Especial Mangá Holográfico Vol. 1–5" data-produto-preco="219.90" aria-label="Colocar Box de Mangá no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 11 — Mochila Gamer -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <img
+                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+                alt="Mochila gamer resistente à água com compartimento para notebook e USB de carregamento externo"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Acessórios</span>
+              <h3>Mochila Gamer Tactical Bag 30L</h3>
+              <p class="card-produto-descricao">Material ballistic nylon resistente à água, compartimento acolchoado para notebook 17", saída USB externa, alças ergonômicas e estampa cyberpunk lateral.</p>
+              <p class="preco">R$ 159,90</p>
+              <button type="button" data-produto-id="mochila-gamer" data-produto-nome="Mochila Gamer Tactical Bag 30L" data-produto-preco="159.90" aria-label="Colocar Mochila Gamer no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
+          <!-- PRODUTO 12 — Cadeira Gamer -->
+          <article class="card-produto">
+            <div class="card-produto-imagem">
+              <span class="tag-estoque tag-estoque--urgente">Frete Grátis</span>
+              <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
+                alt="Cadeira gamer ergonômica em couro PU preto e vermelho com apoio lombar e de pescoço"
+                width="400" height="300" loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <span class="categoria">Mobiliário Gamer</span>
+              <h3>Cadeira Gamer Pro Ergonômica 4D</h3>
+              <p class="card-produto-descricao">Assento em espuma cold cure de alta resiliência, apoio de braços 4D ajustáveis, encosto reclinável em 180°, suporte lombar e de pescoço removíveis.</p>
+              <p class="preco">R$ 1.299,90</p>
+              <button type="button" data-produto-id="cadeira-gamer-pro" data-produto-nome="Cadeira Gamer Pro Ergonômica 4D" data-produto-preco="1299.90" aria-label="Colocar Cadeira Gamer no inventário">Colocar no Inventário</button>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
