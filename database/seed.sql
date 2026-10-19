@@ -1,13 +1,6 @@
--- ========================================================
--- DAB GEEK STORE — Script DML de Povoamento (Seed)
--- Disciplina: Programação em Novas Tecnologias II / Programação Web
--- ========================================================
 
 USE dab_geek_store;
 
--- --------------------------------------------------------
--- 1. POVOAMENTO DAS CATEGORIAS
--- --------------------------------------------------------
 INSERT INTO categorias (id, nome, slug) VALUES
   (1, 'Colecionáveis & Action Figures', 'colecionaveis'),
   (2, 'Periféricos & Hardware Gamer', 'perifericos'),
@@ -16,20 +9,12 @@ INSERT INTO categorias (id, nome, slug) VALUES
   (5, 'Mangás & Cultura Pop', 'mangas')
 ON DUPLICATE KEY UPDATE nome = VALUES(nome);
 
--- --------------------------------------------------------
--- 2. CADASTRO DOS 3 USUÁRIOS SOLICITADOS
--- Senha padrão para testes de login: senha123 (hash BCRYPT)
--- --------------------------------------------------------
 INSERT INTO usuarios (id, nome_completo, nome_usuario, email, senha_hash, nivel_acesso) VALUES
   (1, 'Daniel Bonilla', 'daniel_bonilla', 'daniel@dabgeek.com.br', '$2y$10$pi.KY.JvcHCEugDgyobgLu0I4s5fpcWvsT9j/1IKI9UlRLbc8CWJO', 'admin'),
   (2, 'Clara Rocha', 'clara_cyber', 'clara.cyber@email.com', '$2y$10$pi.KY.JvcHCEugDgyobgLu0I4s5fpcWvsT9j/1IKI9UlRLbc8CWJO', 'cliente'),
   (3, 'Marcos Silveira', 'marcos_gamer', 'marcos.silveira@email.com', '$2y$10$pi.KY.JvcHCEugDgyobgLu0I4s5fpcWvsT9j/1IKI9UlRLbc8CWJO', 'cliente')
 ON DUPLICATE KEY UPDATE nome_completo = VALUES(nome_completo);
 
--- --------------------------------------------------------
--- 3. POVOAMENTO DOS 12 PRODUTOS REAIS DA DAB GEEK STORE
--- Coordenados com os arquivos locais em assets/img/img2.jpg a img13.jpg
--- --------------------------------------------------------
 INSERT INTO produtos (id, categoria_id, codigo_slug, nome, descricao, preco, estoque, imagem_url, ativo) VALUES
   (1, 1, 'action-figure-samurai', 'Action Figure Samurai Cyberpunk 2077', 'Edição de colecionador pintada à mão, rica em detalhes e luz neon.', 349.90, 15, 'assets/img/img2.jpg', 1),
   (2, 2, 'teclado-mecanico-rgb', 'Teclado Mecânico RGB Hot-Swap Switch Red', 'Switches lineares lubrificados de fábrica e iluminação por tecla personalizável.', 429.90, 28, 'assets/img/img3.jpg', 1),
@@ -45,33 +30,21 @@ INSERT INTO produtos (id, categoria_id, codigo_slug, nome, descricao, preco, est
   (12, 2, 'cadeira-gamer-pro', 'Cadeira Gamer Pro Ergonômica 4D', 'Estrutura em aço, almofadas lombar/cervical e reclinação total até 180 graus.', 1299.90, 10, 'assets/img/img13.jpg', 1)
 ON DUPLICATE KEY UPDATE nome = VALUES(nome);
 
--- --------------------------------------------------------
--- 4. POVOAMENTO DOS PEDIDOS
--- --------------------------------------------------------
 INSERT INTO pedidos (id, usuario_id, data_pedido, status, valor_total) VALUES
   (1, 1, '2026-10-14 10:15:00', 'entregue', 1729.80),
   (2, 2, '2026-10-15 14:30:00', 'pago', 799.60),
   (3, 3, '2026-10-16 19:45:00', 'enviado', 919.60)
 ON DUPLICATE KEY UPDATE status = VALUES(status);
 
--- --------------------------------------------------------
--- 5. POVOAMENTO DOS ITENS DO PEDIDO (COMPRAS DOS USUÁRIOS)
--- --------------------------------------------------------
--- Pedido 1 (Daniel Bonilla):
---   1x Cadeira Gamer Pro (R$ 1.299,90) + 1x Teclado Mecânico RGB (R$ 429,90)
 INSERT INTO itens_pedido (pedido_id, produto_id, quantidade, preco_unitario) VALUES
   (1, 12, 1, 1299.90),
   (1, 2, 1, 429.90);
 
--- Pedido 2 (Clara Rocha):
---   2x Box de Mangás (R$ 279,90) + 1x Luminária Pixel Art (R$ 149,90) + 1x Caneca Térmica Pixel (R$ 89,90)
 INSERT INTO itens_pedido (pedido_id, produto_id, quantidade, preco_unitario) VALUES
   (2, 10, 2, 279.90),
   (2, 5, 1, 149.90),
   (2, 8, 1, 89.90);
 
--- Pedido 3 (Marcos Silveira):
---   1x Mouse Gamer Sem Fio (R$ 289,90) + 2x Deskmat Extra Grande (R$ 119,90) + 1x Headset Gamer 7.1 (R$ 389,90)
 INSERT INTO itens_pedido (pedido_id, produto_id, quantidade, preco_unitario) VALUES
   (3, 6, 1, 289.90),
   (3, 4, 2, 119.90),

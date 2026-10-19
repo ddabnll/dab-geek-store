@@ -129,7 +129,6 @@ button, input, textarea, select {
   padding: 0 24px;
 }
 
-/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -270,7 +269,6 @@ button, input, textarea, select {
   transition: 0.3s;
 }
 
-/* PAINEL CARRINHO / INVENTÁRIO */
 .carrinho-fundo[hidden],
 .carrinho-painel[hidden],
 .nav-carrinho-contagem[hidden] {
@@ -449,7 +447,6 @@ button, input, textarea, select {
   color: var(--neon-green);
 }
 
-/* BOTÕES GERAIS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -497,7 +494,6 @@ button, input, textarea, select {
   font-size: 13px;
 }
 
-/* HERO SECTION */
 .hero {
   padding: 60px 0 80px;
   position: relative;
@@ -554,7 +550,6 @@ button, input, textarea, select {
   border-color: var(--rust);
 }
 
-/* SEÇÃO VITRINE */
 .secao {
   padding: 70px 0;
 }
@@ -706,7 +701,6 @@ button, input, textarea, select {
   border-color: var(--neon-green);
 }
 
-/* CABEÇALHOS DE PÁGINAS INTERNAS */
 .cabecalho-pagina {
   padding: 40px 0 20px;
   border-bottom: 1px solid var(--border);
@@ -728,7 +722,6 @@ button, input, textarea, select {
   color: #FFFFFF;
 }
 
-/* CAIXA DE FORMULÁRIO (CONTA / CONTATO) */
 .container-centralizado {
   display: flex;
   justify-content: center;
@@ -859,7 +852,6 @@ button, input, textarea, select {
   display: none !important;
 }
 
-/* ACESSIBILIDADE — visível apenas para leitores de tela */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -872,7 +864,6 @@ button, input, textarea, select {
   border: 0;
 }
 
-/* DASHBOARD */
 .painel-resumo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -969,7 +960,6 @@ button, input, textarea, select {
   color: var(--status-sucesso-texto);
 }
 
-/* PERFIL */
 .perfil-grade {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -1038,7 +1028,6 @@ button, input, textarea, select {
   padding: 24px;
 }
 
-/* SOBRE & INSTITUCIONAL */
 .sobre-corpo {
   max-width: 820px;
   font-size: 16px;
@@ -1138,7 +1127,6 @@ button, input, textarea, select {
   font-size: 14px;
 }
 
-/* CONTATO */
 .contato-grade {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1193,7 +1181,6 @@ button, input, textarea, select {
   display: none !important;
 }
 
-/* FOOTER */
 footer {
   background: var(--paper-alt);
   border-top: 1px solid var(--border);
@@ -1257,7 +1244,6 @@ footer {
   font-size: 13px;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 900px) {
   .hero-grade {
     grid-template-columns: 1fr;

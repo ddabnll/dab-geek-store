@@ -1,14 +1,6 @@
--- ========================================================
--- DAB GEEK STORE — Consultas SQL do Projeto
--- Disciplina: Programação em Novas Tecnologias II / Programação Web
--- ========================================================
 
 USE dab_geek_store;
 
--- --------------------------------------------------------
--- CONSULTA 1 (PRINCIPAL SOLICITADA):
--- Consulta de nome_usuario + produto + quantidade
--- --------------------------------------------------------
 SELECT 
     u.nome_usuario,
     p.nome AS produto,
@@ -19,10 +11,6 @@ INNER JOIN usuarios u ON ped.usuario_id = u.id
 INNER JOIN produtos p ON ip.produto_id = p.id
 ORDER BY u.nome_usuario ASC, p.nome ASC;
 
--- --------------------------------------------------------
--- CONSULTA 1B (DETALHADA / FORMATO FINANCEIRO):
--- nome_usuario + produto + quantidade + valores e datas
--- --------------------------------------------------------
 SELECT 
     u.nome_usuario,
     u.nome_completo,
@@ -39,10 +27,6 @@ INNER JOIN usuarios u ON ped.usuario_id = u.id
 INNER JOIN produtos p ON ip.produto_id = p.id
 ORDER BY u.nome_usuario ASC, ped.data_pedido DESC, p.nome ASC;
 
--- --------------------------------------------------------
--- CONSULTA 2 (RESUMO POR USUÁRIO):
--- Total de itens adquiridos e valor total por cliente
--- --------------------------------------------------------
 SELECT 
     u.nome_usuario,
     u.nome_completo,
@@ -55,9 +39,6 @@ LEFT JOIN itens_pedido ip ON ped.id = ip.pedido_id
 GROUP BY u.id, u.nome_usuario, u.nome_completo
 ORDER BY total_gasto DESC;
 
--- --------------------------------------------------------
--- CONSULTA 3 (PRODUTOS MAIS VENDIDOS NO INVENTÁRIO):
--- --------------------------------------------------------
 SELECT 
     p.codigo_slug,
     p.nome AS produto,

@@ -1,8 +1,4 @@
 <?php
-// ========================================================
-// DAB GEEK STORE — Conexão PDO com MySQL
-// ========================================================
-
 require_once __DIR__ . '/config.php';
 
 function obterConexao(): PDO {
@@ -26,7 +22,6 @@ function obterConexao(): PDO {
         try {
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $opcoes);
         } catch (PDOException $e) {
-            // Em caso de falha de conexão
             die(json_encode([
                 'sucesso'  => false,
                 'mensagem' => 'Erro ao conectar ao banco de dados: ' . $e->getMessage()

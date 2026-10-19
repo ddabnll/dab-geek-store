@@ -1,6 +1,4 @@
-// DAB GEEK STORE — Interações e Lógica de E-commerce
 
-// 1. Menu Mobile
 document.addEventListener("DOMContentLoaded", function () {
   var botao = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav-links");
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 2. Abas de Login e Cadastro (conta.html)
 document.addEventListener("DOMContentLoaded", function () {
   var botoesAba = document.querySelectorAll(".aba-botao, .trocar-aba");
   var paineis = {
@@ -67,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.location.hash === "#cadastro") ativarAba("cadastro");
 });
 
-// 3. Validação de Formulários
 document.addEventListener("DOMContentLoaded", function () {
   var formularios = document.querySelectorAll("form[novalidate]");
 
@@ -161,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// 4. Sacola de Compras / Inventário (E-commerce)
 document.addEventListener("DOMContentLoaded", function () {
   var CHAVE_CARRINHO = "dab-geek-carrinho";
 
@@ -208,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(itens));
     } catch (erro) {
-      // Ignora erro em caso de restrição de storage
     }
     limparAvisoCarrinhoVazio();
     renderizarCarrinho();
@@ -288,7 +282,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (totalCarrinho) totalCarrinho.textContent = formatarPreco(totalPreco);
   }
 
-  // Efeito de feedback nos botões dos produtos
   document.querySelectorAll(".card-produto button").forEach(function (botao) {
     var textoOriginal = botao.textContent;
     var timer = null;

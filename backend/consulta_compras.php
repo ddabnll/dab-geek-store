@@ -1,14 +1,8 @@
 <?php
-// ========================================================
-// DAB GEEK STORE — Consulta de Compras por Usuário
-// Exibe a relação: nome_usuario + produto + quantidade
-// ========================================================
-
 require_once __DIR__ . '/conexao.php';
 
 $pdo = obterConexao();
 
-// Consulta SQL solicitada: nome_usuario + produto + quantidade (com preço e data para enriquecer)
 $sql = "
     SELECT 
         u.nome_usuario,
@@ -32,7 +26,6 @@ $sql = "
 $stmt = $pdo->query($sql);
 $compras = $stmt->fetchAll();
 
-// Totais gerais para os cards de resumo
 $totalItens = 0;
 $valorTotalGeral = 0;
 foreach ($compras as $item) {

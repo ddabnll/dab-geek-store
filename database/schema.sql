@@ -1,8 +1,3 @@
--- ========================================================
--- DAB GEEK STORE — Script DDL do Banco de Dados Relacional
--- Disciplina: Programação em Novas Tecnologias II / Programação Web
--- SGBD: MySQL / MariaDB (XAMPP)
--- ========================================================
 
 CREATE DATABASE IF NOT EXISTS dab_geek_store
   CHARACTER SET utf8mb4
@@ -10,9 +5,6 @@ CREATE DATABASE IF NOT EXISTS dab_geek_store
 
 USE dab_geek_store;
 
--- --------------------------------------------------------
--- 1. TABELA DE CATEGORIAS
--- --------------------------------------------------------
 DROP TABLE IF EXISTS itens_pedido;
 DROP TABLE IF EXISTS pedidos;
 DROP TABLE IF EXISTS produtos;
@@ -25,9 +17,6 @@ CREATE TABLE categorias (
   slug VARCHAR(80) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
--- 2. TABELA DE USUÁRIOS
--- --------------------------------------------------------
 CREATE TABLE usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome_completo VARCHAR(120) NOT NULL,
@@ -38,9 +27,6 @@ CREATE TABLE usuarios (
   criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
--- 3. TABELA DE PRODUTOS
--- --------------------------------------------------------
 CREATE TABLE produtos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   categoria_id INT NOT NULL,
@@ -57,9 +43,6 @@ CREATE TABLE produtos (
     ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
--- 4. TABELA DE PEDIDOS
--- --------------------------------------------------------
 CREATE TABLE pedidos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT NOT NULL,
@@ -71,9 +54,6 @@ CREATE TABLE pedidos (
     ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
--- 5. TABELA DE ITENS DO PEDIDO (RELACIONAMENTO N:N)
--- --------------------------------------------------------
 CREATE TABLE itens_pedido (
   id INT AUTO_INCREMENT PRIMARY KEY,
   pedido_id INT NOT NULL,
