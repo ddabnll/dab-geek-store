@@ -1,11 +1,13 @@
-# ⚡ DAB GEEK STORE — E-Commerce Front-End
+# ⚡ DAB GEEK STORE — E-Commerce Full-Stack
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 
-Projeto de interface e arquitetura front-end de uma plataforma de **e-commerce temático de cultura pop, games e periféricos de alta performance**, desenvolvido para fins acadêmicos.
+Projeto de interface e arquitetura de um **e-commerce temático de cultura pop, games e periféricos de alta performance**, integrando front-end dinâmico e camada de persistência com banco de dados relacional, desenvolvido para fins acadêmicos.
 
 ---
 
@@ -27,28 +29,40 @@ A **DAB GEEK STORE** é um e-commerce especializado na venda de action figures o
 O projeto foi construído priorizando:
 1. **Semântica HTML5 estrita e acessibilidade WAI-ARIA**;
 2. **Estética Cyberpunk / Dark Gamer de alto impacto visual**;
-3. **Responsividade total (mobile-first a ultra-wide)**;
-4. **Interatividade rica sem dependência de frameworks externos** (Vanilla JavaScript).
+3. **Responsividade total (mobile-first a telas ultra-wide)**;
+4. **Interatividade rica sem dependência de bibliotecas externas** (Vanilla JavaScript);
+5. **Persistência de dados relacional em MySQL com camada de integração em PHP (PDO)**.
 
 ---
 
 ## 📁 Estrutura de Arquivos do Repositório
 
-O projeto mantém rigorosamente a estrutura esperada com todas as páginas e recursos modulares:
+O projeto é estruturado de forma modular, separando recursos estáticos, páginas, rotinas de banco de dados e scripts de backend:
 
 ```text
 dab-geek-store/
-├── index.html          # Vitrine principal da loja com hero e arsenal de produtos
-├── sobre.html          # História da marca, missão, curadoria e valores
-├── contato.html        # Formulário de atendimento com honeypot e canais diretos
-├── conta.html          # Central de autenticação com abas de Login e Cadastro
-├── dashboard.html      # Painel administrativo de controle de vendas e pedidos
-├── perfil.html         # Painel do cliente com XP acumulado, dados e histórico
-├── style.css           # Folha de estilos unificada com CSS Variables & Dark Theme
-├── script.js           # Lógica do carrinho (localStorage), abas e validações
-├── favicon.svg         # Ícone vetorial da marca (gamepad neon)
-├── .gitignore          # Arquivos e pastas ignoradas pelo versionamento Git
-└── README.md           # Documentação completa do projeto
+├── assets/
+│   └── img/                 # Imagens locais dos 12 produtos e hero banner (img1.jpg a img13.jpg)
+├── backend/
+│   ├── config.php           # Credenciais e constantes de conexão do banco
+│   ├── conexao.php          # Instância PDO segura com tratamento de exceções
+│   ├── setup_banco.php      # Script de execução automática do schema e seed
+│   └── consulta_compras.php # Interface web da consulta relacional de pedidos
+├── database/
+│   ├── schema.sql           # DDL de criação do banco e das 5 tabelas relacionais
+│   ├── seed.sql             # DML de povoamento (categorias, produtos, usuários e pedidos)
+│   └── queries.sql          # Consultas SQL (relatórios com INNER JOIN e agrupamentos)
+├── index.html               # Vitrine principal da loja com hero e catálogo
+├── sobre.html               # História da marca, missão e curadoria
+├── contato.html             # Formulário de atendimento com validação e honeypot
+├── conta.html               # Central de autenticação com abas de Login e Cadastro
+├── dashboard.html           # Painel administrativo de métricas e pedidos
+├── perfil.html              # Painel do cliente com dados e histórico de compras
+├── style.css                # Folha de estilos unificada com variáveis CSS e tema escuro
+├── script.js                # Lógica do carrinho (localStorage), abas e validações
+├── favicon.svg              # Ícone vetorial da marca
+├── .gitignore               # Arquivos e pastas ignoradas pelo Git
+└── README.md                # Documentação do projeto
 ```
 
 ---
@@ -56,42 +70,61 @@ dab-geek-store/
 ## 🛠️ Tecnologias e Boas Práticas Empregadas
 
 ### 1. HTML5 Semântico & Acessibilidade (a11y)
-* **Estrutura Semântica:** Utilização sistemática de `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>` e `<footer>`.
+* **Estrutura Semântica:** Utilização de `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>` e `<footer>`.
 * **Navegação Acessível:** Link utilitário `"Pular para o conteúdo"` para leitores de tela e usuários de teclado.
-* **WAI-ARIA Completo:** Atributos `aria-expanded`, `aria-controls`, `aria-label`, `aria-haspopup`, `aria-selected` e `role="dialog"` na sacola/inventário e nas abas de login.
-* **Formulários Acessíveis:** Todos os `<input>` e `<textarea>` possuem `<label>` vinculados via atributos `for`/`id` e atributos de autocomplete modernos (`autocomplete="name"`, `autocomplete="email"`).
-* **Anti-Spam Nativo:** Campo honeypot (`.campo-armadilha`) oculto para mitigar bots sem afetar a usabilidade.
+* **WAI-ARIA:** Atributos `aria-expanded`, `aria-controls`, `aria-label`, `aria-haspopup`, `aria-selected` e `role="dialog"` no carrinho/inventário e nas abas de login.
+* **Formulários:** Elementos `<input>` e `<textarea>` com `<label>` devidamente vinculados por `for`/`id` e atributos de autocomplete (`autocomplete="name"`, `autocomplete="email"`).
+* **Anti-Spam:** Campo honeypot (`.campo-armadilha`) oculto para mitigar submissões automatizadas sem comprometer a usabilidade.
 
-### 2. CSS3 Moderno & Design System
-* **CSS Custom Properties (`:root`):** Paleta centralizada com tons de grafite profundo (`#0B0E14`), slate escuro, roxo neon (`#8B5CF6`), ciano (`#06B6D4`) e verde esmeralda (`#10B981`).
-* **Layouts Flexbox & CSS Grid:** Grades fluidas e responsivas para a vitrine de produtos, métricas do dashboard e tabela de pedidos.
-* **Acessibilidade Visual:** Suporte a `@media (prefers-reduced-motion: reduce)` para usuários sensíveis a animações.
-* **Microinterações:** Efeitos de hover com elevação suave, sombras neon e foco visível de alto contraste (`:focus-visible`).
+### 2. CSS3 & Design System
+* **CSS Custom Properties (`:root`):** Paleta centralizada com tons de grafite escuro (`#0B0E14`), slate, roxo neon (`#8B5CF6`), ciano (`#06B6D4`) e verde esmeralda (`#10B981`).
+* **Flexbox & CSS Grid:** Grades responsivas para a vitrine de produtos, métricas do dashboard e tabelas de pedidos.
+* **Imagens em Cards:** Enquadramento com `object-fit: contain` e alinhamento flexbox, evitando cortes e distorções nos produtos.
+* **Acessibilidade Visual:** Suporte a `@media (prefers-reduced-motion: reduce)` e foco visível de alto contraste (`:focus-visible`).
 
-### 3. JavaScript Vanilla (Lógica de E-commerce)
-* **Inventário / Carrinho Dinâmico:**
-  * Adição de produtos via `data-attributes` (`data-produto-id`, `data-produto-nome`, `data-produto-preco`);
-  * Persistência de estado local usando `localStorage`;
-  * Incremento, decremento e remoção de itens em tempo real;
-  * Contador numérico dinâmico no ícone da sacola;
-  * Atualização automática do valor total formatado em Reais (`R$`).
-* **Sistema de Abas de Autenticação:** Alternância instantânea e acessível entre Login e Cadastro na página `conta.html`.
-* **Validação de Formulários Client-Side:** Validação com mensagens customizadas em português e verificação de confirmação de senha.
-* **Menu Hambúrguer Responsivo:** Toggle com suporte a fechamento pela tecla `Escape`.
+### 3. JavaScript Vanilla
+* **Carrinho / Inventário:**
+  * Adição de itens via `data-attributes` (`data-produto-id`, `data-produto-nome`, `data-produto-preco`);
+  * Persistência de estado local com `localStorage`;
+  * Incremento, decremento e exclusão de itens com feedback visual dinâmico;
+  * Atualização automática da quantidade total e valores em Reais (`R$`).
+* **Abas de Autenticação:** Alternância entre Login e Cadastro na página `conta.html`.
+* **Validação Client-Side:** Validação de formato de e-mail, preenchimento obrigatório e conferência de senhas em tempo real.
+* **Menu Mobile:** Toggle acessível para dispositivos móveis com fechamento via tecla `Escape`.
+
+### 4. Banco de Dados Relacional & Back-End (PHP / MySQL)
+* **Modelagem Relacional (MySQL / MariaDB):**
+  * Banco de dados `dab_geek_store` em `utf8mb4_unicode_ci`;
+  * Estrutura normalizada com 5 tabelas: `usuarios`, `categorias`, `produtos`, `pedidos` e `itens_pedido`;
+  * Integridade referencial com chaves primárias e estrangeiras (`FOREIGN KEY`, `ON DELETE RESTRICT` e `ON DELETE CASCADE`).
+* **Segurança e Criptografia:**
+  * Senhas de usuários armazenadas com hash gerado pelo algoritmo `BCRYPT`.
+* **Camada de Conexão (PHP PDO):**
+  * Conexão via classe `PDO` com tratamento de exceções ativado (`PDO::ERRMODE_EXCEPTION`) e emulação de prepared statements desativada, prevenindo injeções de SQL.
+* **Consultas Relacionais com JOIN:**
+  * Consultas parametrizadas relacionando `usuarios`, `pedidos`, `itens_pedido` e `produtos`, possibilitando relatórios detalhados de compras (usuário $\times$ produto $\times$ quantidade).
 
 ---
 
 ## 🚀 Como Executar o Projeto Localmente
 
-Você não precisa de nenhum servidor complexo nem de instalações como Node.js para testar a loja:
+### Opção 1: Executando com XAMPP (Front-End + Back-End completo)
+1. Instale e abra o **XAMPP Control Panel**;
+2. Inicie os módulos **Apache** e **MySQL**;
+3. Mantenha os arquivos do projeto na pasta `htdocs` (ex.: `C:\xampp\htdocs\dab-geek-store`) ou crie uma junção simbólica;
+4. Para criar o banco e inserir os dados de teste automaticamente, acesse pelo navegador:
+   ```text
+   http://localhost/dab-geek-store/backend/setup_banco.php
+   ```
+5. Acesse as páginas da aplicação:
+   * **Vitrine da Loja:** `http://localhost/dab-geek-store/index.html`
+   * **Consulta de Compras:** `http://localhost/dab-geek-store/backend/consulta_compras.php`
+   * **Gerenciador phpMyAdmin:** `http://localhost/phpmyadmin` *(banco `dab_geek_store`)*
 
-### Opção 1: Via VS Code (Recomendado)
-1. Abra o **Visual Studio Code**;
-2. Vá em `File > Open Folder...` (ou `Arquivo > Abrir Pasta...`) e selecione a pasta `dab-geek-store`;
-3. Se tiver a extensão **Live Server** instalada, clique com o botão direito em `index.html` e selecione **"Open with Live Server"**.
-
-### Opção 2: Pelo Navegador
-1. Dê um duplo clique diretamente no arquivo `index.html` para abri-lo em qualquer navegador (Chrome, Edge, Firefox, Brave, etc.).
+### Opção 2: Apenas Front-End (Sem Banco de Dados)
+Se desejar apenas visualizar a interface visual e testar as interações de tela:
+* **Pelo VS Code:** Abra a pasta no VS Code e utilize a extensão **Live Server** a partir do arquivo `index.html`.
+* **Direto no Navegador:** Dê um duplo clique no arquivo `index.html`.
 
 ---
 
